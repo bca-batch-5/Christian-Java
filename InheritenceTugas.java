@@ -25,7 +25,7 @@ public class InheritenceTugas {
         System.out.println("3. Lingkaran");
         System.out.println("4. Kubus");
         System.out.println("5. Balok");
-        System.out.println("6. Lingkaran");
+        System.out.println("6. Bola");
         System.out.print("Pilihan: ");
         inputMenu = input.nextInt();
         input.nextLine();
@@ -208,7 +208,7 @@ public class InheritenceTugas {
             }
             System.out.print("\nApakah program ingin dijalankan ulang? Y/N : ");
             option = input.nextLine();
-        } while (option.equals("y"));
+        } while (option.equalsIgnoreCase("y"));
 
         // Persegi persegi = new Persegi(2);
         // System.out.println("--------- PERSEGI --------");
