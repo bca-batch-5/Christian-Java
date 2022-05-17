@@ -1,7 +1,8 @@
 package src.obj.OOP;
 
+import src.obj.OOP.Interfaces.BangunDatar;
 
-public class Lingkaran {
+public class Lingkaran implements BangunDatar{
     private float jariJari;
     final double phi = 3.14;
 
@@ -17,7 +18,7 @@ public class Lingkaran {
         this.jariJari = jariJari;
     }
 
-    public double getKeliling(){
+    public double getKelilingLingkaran(){
         if(jariJari %7 == 0){
             return Math.round(2 * phi *jariJari); 
         }
@@ -28,11 +29,30 @@ public class Lingkaran {
         return phi;
     }
 
-    public double getLuas(){
+    public double getLuasLingkaran(){
         if(jariJari %7 == 0){
             return Math.round(phi * jariJari * jariJari);
         }
         return phi * jariJari * jariJari;
     }
-    
+
+    @Override
+    public String printNama(String namaBangunDatar) {
+        return namaBangunDatar;
+    }
+
+    @Override
+    public String karakteristik(String karakteristikBangun) {
+        return karakteristikBangun;
+    }
+
+    @Override
+    public int getKeliling() {
+        return 0;
+    }
+
+    @Override
+    public int getLuas() {
+        return 0;
+    }
 }

@@ -6,6 +6,9 @@ public class latihan1 {
 
     public static void main(String[] args) {
         System.out.println(angkaNama(288));
+        // String [] name = {"Christian, bernard"};
+        // List<String> nama = new ArrayList<>(Arrays.asList(name));
+        // System.out.println(nama.sort(c););
     }
 
     public static String angkaNama(int Hari){

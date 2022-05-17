@@ -1,6 +1,8 @@
 package src.obj.OOP;
 
-public class PersegiPanjang {
+import src.obj.OOP.Interfaces.BangunDatar;
+
+public class PersegiPanjang implements BangunDatar {
     private int panjang;
     private int lebar;
 
@@ -28,6 +30,23 @@ public class PersegiPanjang {
 
     public int getLuas(){
         return panjang * lebar;
+    }
+    @Override
+    public String printNama(String namaBangunDatar) {
+        
+        return namaBangunDatar;
+    }
+    @Override
+    public String karakteristik(String karakteristikBangun) {
+        return karakteristikBangun;
+    }
+    @Override
+    public double getKelilingLingkaran() {
+        return 0;
+    }
+    @Override
+    public double getLuasLingkaran() {
+        return 0;
     }
     
 

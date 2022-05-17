@@ -5,12 +5,17 @@ import java.util.Scanner;
 import src.obj.OOP.Lingkaran;
 import src.obj.OOP.Persegi;
 import src.obj.OOP.PersegiPanjang;
+import src.obj.OOP.Interfaces.BangunDatar;
+import src.obj.OOP.Interfaces.BangunRuang;
+import src.obj.OOP.constant.constant;
 import src.obj.OOP.subclass.Balok;
 import src.obj.OOP.subclass.Bola;
 import src.obj.OOP.subclass.Kubus;
 
 public class InheritenceTugas {
     static Scanner input = new Scanner(System.in);
+    static BangunDatar bangunDatar = new Persegi(0);
+    static constant constantVar = new constant();
     static int inputMenu;
     static int inputHitung;
     static int inputAngka;
@@ -53,23 +58,25 @@ public class InheritenceTugas {
             input();
             switch (inputMenu) {
                 case 1:
-                    System.out.println("--------- PERSEGI --------");
+                    System.out.println("--------- "+ bangunDatar.printNama(constantVar.getPERSEGI()) +" --------");
                     inputBangunDatar();
                     switch (inputHitung) {
                         case 1:
                             System.out.print("Sisi Persegi: ");
                             inputAngka = input.nextInt();
                             input.nextLine();
-                            Persegi persegi = new Persegi(inputAngka);
-                            System.out.print("Keliling Persegi: " + persegi.getKeliling());
+                            BangunDatar persegiKel = new Persegi(inputAngka);
+                            System.out.println("Keliling Persegi: " + persegiKel.getKeliling());
+                            System.out.println("Karakteristik Persegi: " + bangunDatar.karakteristik(constantVar.getKARAKTERISTIK_PERSEGI()));
                             break;
 
                         case 2:
                             System.out.print("Sisi Persegi: ");
                             inputAngka = input.nextInt();
                             input.nextLine();
-                            Persegi persegiLuas = new Persegi(inputAngka);
-                            System.out.print("Keliling Persegi: " + persegiLuas.getLuas());
+                            BangunDatar persegiLuas = new Persegi(inputAngka);
+                            System.out.println("Keliling Persegi: " + persegiLuas.getLuas());
+                            System.out.println("Karakteristik Persegi: " + bangunDatar.karakteristik(constantVar.getKARAKTERISTIK_PERSEGI()));
                             break;
 
                         default:
@@ -80,7 +87,7 @@ public class InheritenceTugas {
                     break;
 
                 case 2:
-                    System.out.println("--------- PERSEGI PANJANG --------");
+                    System.out.println("--------- "+ bangunDatar.printNama(constantVar.getPERSEGI_PANJANG()) +" --------");
                     inputBangunDatar();
                     switch (inputHitung) {
                         case 1:
@@ -90,8 +97,9 @@ public class InheritenceTugas {
                             System.out.print("Lebar: ");
                             inputLebar = input.nextInt();
                             input.nextLine();
-                            PersegiPanjang persegiPanjangKel = new PersegiPanjang(inputAngka, inputLebar);
-                            System.out.print("Keliling Persegi Panjang: " + persegiPanjangKel.getKeliling());
+                            BangunDatar persegiPanjangKel = new PersegiPanjang(inputAngka, inputLebar);
+                            System.out.println("Keliling Persegi Panjang: " + persegiPanjangKel.getKeliling());
+                            System.out.println("Karakteristik Persegi Panjang: " + bangunDatar.karakteristik(constantVar.getKARAKTERISTIK_PERSEGI_PANJANG()));
                             break;
 
                         case 2:
@@ -101,8 +109,9 @@ public class InheritenceTugas {
                             System.out.print("Lebar: ");
                             inputLebar = input.nextInt();
                             input.nextLine();
-                            PersegiPanjang persegiPanjangLuas = new PersegiPanjang(inputAngka, inputLebar);
-                            System.out.print("Keliling Persegi Panjang: " + persegiPanjangLuas.getLuas());
+                            BangunDatar persegiPanjangLuas = new PersegiPanjang(inputAngka, inputLebar);
+                            System.out.println("Keliling Persegi Panjang: " + persegiPanjangLuas.getLuas());
+                            System.out.println("Karakteristik Persegi Panjang: " + bangunDatar.karakteristik(constantVar.getKARAKTERISTIK_PERSEGI_PANJANG()));
                             break;
 
                         default:
@@ -113,23 +122,25 @@ public class InheritenceTugas {
                     break;
 
                 case 3:
-                    System.out.println("--------- Lingkaran --------");
+                System.out.println("--------- "+ bangunDatar.printNama(constantVar.getLINGKARAN()) +" --------");
                     inputBangunDatar();
                     switch (inputHitung) {
                         case 1:
                             System.out.print("Jari jari: ");
                             jari = input.nextFloat();
                             input.nextLine();
-                            Lingkaran lingkaranKel = new Lingkaran(jari);
-                            System.out.print("Keliling Lingkaran: " + lingkaranKel.getKeliling());
+                            BangunDatar lingkaranKel = new Lingkaran(jari);
+                            System.out.println("Keliling Lingkaran: " + lingkaranKel.getKelilingLingkaran());
+                            System.out.println("Karakteristik Lingkaran: " + bangunDatar.karakteristik(constantVar.getKARAKTERISTIK_LINGKARAN()));
                             break;
 
                         case 2:
                             System.out.print("Jari jari: ");
                             jari = input.nextFloat();
                             input.nextLine();
-                            Lingkaran lingkaranLuas = new Lingkaran(jari);
-                            System.out.print("Keliling Lingkaran: " + lingkaranLuas.getLuas());
+                            BangunDatar lingkaranLuas = new Lingkaran(jari);
+                            System.out.println("Keliling Lingkaran: " + lingkaranLuas.getLuasLingkaran());
+                            System.out.println("Karakteristik Lingkaran: " + bangunDatar.karakteristik(constantVar.getKARAKTERISTIK_LINGKARAN()));
                             break;
 
                         default:
@@ -140,15 +151,18 @@ public class InheritenceTugas {
                     break;
 
                 case 4:
-                    System.out.println("--------- Kubus --------");
+                System.out.println("--------- "+ bangunDatar.printNama(constantVar.getKUBUS()) +" --------");
                     inputBangunRuang();
                     switch (inputHitung) {
                         case 1:
                             System.out.print("Sisi Kubus: ");
                             inputAngka = input.nextInt();
                             input.nextLine();
-                            Kubus kubus = new Kubus(inputAngka);
-                            System.out.print("Volume Kubus: " + kubus.getVolume());
+                            BangunRuang kubus = new Kubus(inputAngka);
+                            System.out.println("Volume Kubus: " + kubus.volume());
+                            System.out.println("Keliling Kubus: " + kubus.getKeliling());
+                            System.out.println("Luas Kubus: " + kubus.getLuas());
+                            System.out.println("Karakteristik Kubus: " + bangunDatar.karakteristik(constantVar.getKARAKTERISTIK_KUBUS()));
                             break;
 
                         default:
@@ -159,7 +173,7 @@ public class InheritenceTugas {
                     break;
 
                 case 5:
-                    System.out.println("--------- Balok --------");
+                System.out.println("--------- "+ bangunDatar.printNama(constantVar.getBALOK()) +" --------");
                     inputBangunRuang();
                     switch (inputHitung) {
                         case 1:
@@ -172,8 +186,11 @@ public class InheritenceTugas {
                             System.out.print("Tinggi Balok: ");
                             inputTinggi = input.nextInt();
                             input.nextLine();
-                            Balok balok = new Balok(inputAngka, inputLebar, inputTinggi);
-                            System.out.print("Volume Balok: " + balok.volume());
+                            BangunRuang balok = new Balok(inputAngka, inputLebar, inputTinggi);
+                            System.out.println("Volume Balok: " + balok.volume());
+                            System.out.println("Keliling Balok: " + balok.getKeliling());
+                            System.out.println("Luas Balok: " + balok.getLuas());
+                            System.out.println("Karakteristik Balok: " + bangunDatar.karakteristik(constantVar.getKARAKTERISTIK_BALOK()));
                             break;
 
                         default:
@@ -184,15 +201,16 @@ public class InheritenceTugas {
                     break;
 
                 case 6:
-                    System.out.println("--------- Bola --------");
+                System.out.println("--------- "+ bangunDatar.printNama(constantVar.getBOLA()) +" --------");
                     inputBangunRuang();
                     switch (inputHitung) {
                         case 1:
                             System.out.print("Jari jari Bola: ");
                             jari = input.nextFloat();
                             input.nextLine();
-                            Bola bola = new Bola(jari);
-                            System.out.print("Volume Bola: " + bola.getVolume());
+                            BangunRuang bola = new Bola(jari);
+                            System.out.println("Volume Bola: " + bola.volume());
+                            System.out.println("Karakteristik Bolaa: " + bangunDatar.karakteristik(constantVar.getBOLA()));
                             break;
 
                         default:
