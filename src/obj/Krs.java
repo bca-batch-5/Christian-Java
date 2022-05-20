@@ -1,4 +1,4 @@
-package obj;
+package src.obj;
 
 public class Krs {
     private Integer sks = 0;

@@ -2,12 +2,13 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-import Service.kasirImpl;
-import interfaces.kasir.kasirInterface;
-import obj.objKasir.Makanan;
-import obj.objKasir.Minuman;
-import obj.objKasir.Order;
-import obj.objKasir.PaketMakan;
+import src.Service.kasirImpl;
+import src.interfaces.kasir.kasirInterface;
+import src.obj.objKasir.Makanan;
+import src.obj.objKasir.Minuman;
+import src.obj.objKasir.Order;
+import src.obj.objKasir.PaketMakan;
+
 
 public class kasirApp {
     static Scanner input = new Scanner(System.in);

@@ -1,10 +1,13 @@
+package src;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-import Service.registrationImpl;
-import interfaces.registration;
-import obj.Student;
+import src.Service.registrationImpl;
+import src.interfaces.registration;
+import src.obj.Student;
+
 
 public class app {
     static registration regis = new registrationImpl();

@@ -1,4 +1,4 @@
-package obj.objKasir;
+package src.obj.objKasir;
 
 public class Minuman extends Menu {
 

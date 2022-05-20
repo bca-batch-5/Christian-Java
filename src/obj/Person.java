@@ -1,4 +1,4 @@
-package obj;
+package src.obj;
 
 public class Person {
     private String firstName;

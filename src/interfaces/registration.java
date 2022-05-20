@@ -1,6 +1,6 @@
-package interfaces;
+package src.interfaces;
 
-import obj.Student;
+import src.obj.Student;
 
 public interface registration {
     public String regisStudent(Student siswaInput);

@@ -1,11 +1,12 @@
-package Service;
+package src.Service;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import interfaces.kasir.kasirInterface;
-import obj.objKasir.Makanan;
-import obj.objKasir.Order;
+import src.interfaces.kasir.kasirInterface;
+import src.obj.objKasir.Makanan;
+import src.obj.objKasir.Order;
+
 
 public class kasirImpl implements kasirInterface {
     List<Order> orders = new ArrayList<>();

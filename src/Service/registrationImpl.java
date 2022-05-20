@@ -1,11 +1,12 @@
-package Service;
+package src.Service;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import interfaces.registration;
-import obj.Krs;
-import obj.Student;
+import src.interfaces.registration;
+import src.obj.Krs;
+import src.obj.Student;
+
 
 public class registrationImpl implements registration {
     List<Student> siswa = new ArrayList<>();
