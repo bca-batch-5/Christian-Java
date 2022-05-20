@@ -96,7 +96,7 @@ public class kasirApp {
                                 System.out.println("Menu tidak ada!!!");
                                 break;
                         }
-                        orders.add(order);
+                        orders =appKasir.orderMenu(order);
                         System.out.print("Mau tambah Makanan? Y|N : ");
                         option = input.nextLine();
                     } while (option.equalsIgnoreCase("y"));
@@ -132,7 +132,7 @@ public class kasirApp {
                                 System.out.println("Menu tidak ada!!!");
                                 break;
                         }
-                        orders.add(order);
+                        orders = appKasir.orderMenu(order);
                         System.out.print("Mau tambah Minuman lagi? Y|N : ");
                         option = input.nextLine();
                     } while (option.equalsIgnoreCase("y"));
@@ -167,8 +167,8 @@ public class kasirApp {
                             default:
                                 System.out.println("Menu tidak ada!!!");
                                 break;
-                        }
-                        orders.add(order);
+                        }   
+                        orders = appKasir.orderMenu(order);
                         System.out.print("Mau tambah Paket lagi? Y|N : ");
                         option = input.nextLine();
                     } while (option.equalsIgnoreCase("y"));
@@ -205,28 +205,27 @@ public class kasirApp {
 
                 case 5:
                     do {
-
                         System.out.println("Pembayaran");
                         System.out.println("-----------------------------");
                         System.out.print("Total Harga Semua: ");
                         ordersBayar.add(orders.get(0));
-                        if (ordersBayar.get(0).getPesananMinuman() != null) {
-                            for (int i = 0; i < ordersBayar.get(0).getPesananMinuman().size(); i++) {
-                                totalBiayaMinuman += ordersBayar.get(0).getPesananMinuman().get(i).getHarga();
+                        if (orders.get(0).getPesananMinuman() != null) {
+                            for (int i = 0; i < orders.get(0).getPesananMinuman().size(); i++) {
+                                totalBiayaMinuman += orders.get(0).getPesananMinuman().get(i).getHarga();
 
                             }
                         }
 
-                        if (ordersBayar.get(0).getPesananMakan() != null) {
-                            for (int i = 0; i < ordersBayar.get(0).getPesananMakan().size(); i++) {
-                                totalBiayaMakan += ordersBayar.get(0).getPesananMakan().get(i).getHarga();
+                        if (orders.get(0).getPesananMakan() != null) {
+                            for (int i = 0; i < orders.get(0).getPesananMakan().size(); i++) {
+                                totalBiayaMakan += orders.get(0).getPesananMakan().get(i).getHarga();
 
                             }
                         }
 
-                        if (ordersBayar.get(0).getDaftarOrderPaket() != null) {
-                            for (int i = 0; i < ordersBayar.get(0).getDaftarOrderPaket().size(); i++) {
-                                totalBiayaPaket += ordersBayar.get(0).getDaftarOrderPaket().get(i).getHarga();
+                        if (orders.get(0).getDaftarOrderPaket() != null) {
+                            for (int i = 0; i < orders.get(0).getDaftarOrderPaket().size(); i++) {
+                                totalBiayaPaket += orders.get(0).getDaftarOrderPaket().get(i).getHarga();
 
                             }
                         }
@@ -256,22 +255,13 @@ public class kasirApp {
                         System.out.print("Uang Anda: ");
                         bayar = input.nextInt();
                         input.nextLine();
-                        if (bayar < totalBiaya) {
-                            System.out.println("Pembayaran kurang silahkan bayar sesuai tagihan");
-                        } else if (bayar > totalBiaya) {
-                            int kembalian = bayar - totalBiaya;
-                            System.out.println("Terimakasih sudah makan , ini kembalian anda: " + kembalian);
-
-                        } else {
-                            System.out.println("Terimakasih sudah makan.");
-
-                        }
+                        appKasir.pembayaran(bayar, totalBiaya);
                         totalBiayaMakan = 0;
                         totalBiayaMinuman = 0;
                         totalBiayaPaket = 0;
                     } while (bayar < totalBiaya);
-                        totalBiaya = 0;
-                        
+                    totalBiaya = 0;
+
                     break;
                 default:
                     System.out.println("Menu tidak ada!!!");

@@ -4,20 +4,34 @@ import java.util.ArrayList;
 import java.util.List;
 
 import interfaces.kasir.kasirInterface;
+import obj.objKasir.Makanan;
 import obj.objKasir.Order;
 
 public class kasirImpl implements kasirInterface {
     List<Order> orders = new ArrayList<>();
+    List<Makanan> foods = new ArrayList<>();
+    
+    
 
     @Override
-    public String pilihMenu(Order singleOrder) {
+    public List<Order> orderMenu(Order singleOrder) {
+        orders.remove(singleOrder);
         orders.add(singleOrder);
-        return "Menu sudah di simpan";
+        return orders;
     }
 
     @Override
-    public String pembayaran() {
-        return null;
+    public void pembayaran(Integer bayar, Integer total) {
+        if (bayar < total) {
+            System.out.println("Pembayaran kurang silahkan bayar sesuai tagihan");
+        } else if (bayar > total) {
+            int kembalian = bayar - total;
+            System.out.println("Terimakasih sudah makan , ini kembalian anda: " + kembalian);
+
+        } else {
+            System.out.println("Terimakasih sudah makan.");
+
+        }
     }
     
 }
